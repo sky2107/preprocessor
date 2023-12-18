@@ -6,8 +6,21 @@ authors = ["Felix Morillas-navas <felix.morillas-navas@adesso-insurance-solution
 readme = "README.md"
 packages = [{include = "preprocessor"}]
 
+[tool.bumpver]
+current_version = "0.1.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message  = "Bump version {old_version} -> {new_version}"
+commit          = true
+tag             = true
+push            = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+"preprocessor/__init__.py" = ["{version}"]
+
 [tool.poetry.dependencies]
 python = "^3.11"
+bumpver = "^2023.1129"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
