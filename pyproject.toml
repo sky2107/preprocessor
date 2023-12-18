@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "preprocessor"
+name = "preprocessor_ml"
 version = "0.1.0"
 description = ""
 authors = ["Felix Morillas-navas <felix.morillas-navas@adesso-insurance-solutions.de>"]
 readme = "README.md"
-packages = [{include = "preprocessor"}]
+packages = [{include = "preprocessor_ml"}]
 
 [tool.bumpver]
 current_version = "0.1.0"
@@ -16,7 +16,9 @@ push            = false
 
 [tool.bumpver.file_patterns]
 "pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
-"preprocessor/__init__.py" = ["{version}"]
+"preprocessor_ml/__init__.py" = [
+    '^__version__ = "{version}"$',
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
